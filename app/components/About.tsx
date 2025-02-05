@@ -4,7 +4,6 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 export default function About() {
-    const aboutRef = useRef(null);
     const textRefs = useRef([]);
 
     useEffect(() => {

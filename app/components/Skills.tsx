@@ -17,7 +17,6 @@ const skills = {
 };
 
 export default function Skills() {
-    const skillsRef = useRef(null);
     const categoriesRef = useRef([]);
 
     useEffect(() => {

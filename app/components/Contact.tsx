@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { Mail, Github, Linkedin, Twitter, Instagram } from "lucide-react";
+import { Mail, Github, Linkedin, Instagram } from "lucide-react";
 
 export default function Contact() {
     const elementsRef = useRef([]);
@@ -44,8 +44,8 @@ export default function Contact() {
                     ref={(el) => (elementsRef.current[1] = el)}
                     className="text-xl md:text-2xl mb-12"
                 >
-                    I'm available for freelancing and I'm always interested in
-                    hearing about new projects and opportunities.
+                    I&apos;m available for freelancing and I'm always interested
+                    in hearing about new projects and opportunities.
                 </div>
                 <div
                     ref={(el) => (elementsRef.current[2] = el)}
