@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: #000000;
+  --background: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--foreground);
+  color: var(--background);
+}
+
+/* Hide scrollbar but keep functionality */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Custom cursor styles */
+@media (min-width: 768px) {
+  * {
+    cursor: none !important;
+  }
+  body {
+    overflow-y: auto;
+  }
+}
+
+/* Smooth transitions */
+a,
+button {
+  transition: all 0.3s ease;
+}
+
+/* Text balance */
+h1,
+h2,
+h3,
+p {
+  text-wrap: balance;
+}
+
+/* Section transitions */
+section {
+  transition: background-color 0.5s ease;
+}
+
+/* Hero text animation helpers */
+.overflow-hidden > .transform {
+  transform: translateY(100%);
+  transition: transform 0.5s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.mobile-menu-open {
+  overflow: hidden;
+}
+
+body.loading-complete .loading-animation {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  visibility: hidden;
+}
+
