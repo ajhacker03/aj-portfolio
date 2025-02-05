@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
@@ -7,6 +5,8 @@ export default function MagneticCursor() {
     const cursorRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        if (typeof window === "undefined") return; // Ensure this runs only on the client-side
+
         const cursor = cursorRef.current;
         let clientX = -100;
         let clientY = -100;
