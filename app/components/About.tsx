@@ -44,9 +44,9 @@ export default function About() {
                     className="text-xl md:text-2xl leading-relaxed space-y-8"
                 >
                     <p>
-                        I'm a Full Stack Developer with a passion for creating
-                        beautiful, functional, and user-centered digital
-                        experiences.
+                        I&apos;m a Full Stack Developer with a passion for
+                        creating beautiful, functional, and user-centered
+                        digital experiences.
                     </p>
                     <p>
                         With 2+ years of experience in web development, I

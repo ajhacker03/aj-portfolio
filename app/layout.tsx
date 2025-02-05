@@ -5,7 +5,7 @@ import type React from "react"; // Import React
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata = {
-    title: "Ajay's portfolio",
+    title: "Ajay's Portfolio",
     description: "Design and Development Portfolio",
 };
 
