@@ -39,15 +39,17 @@ export default function Header() {
                     Ajhcker
                 </Link>
                 <div className="hidden md:flex gap-8">
-                    {["work", "skills", "about", "contact"].map((item) => (
-                        <Link
-                            key={item}
-                            href={`#${item}`}
-                            className="text-sm tracking-widest hover:opacity-50 transition-opacity"
-                        >
-                            {item.toUpperCase()}
-                        </Link>
-                    ))}
+                    {["home", "work", "skills", "about", "contact"].map(
+                        (item) => (
+                            <Link
+                                key={item}
+                                href={`#${item}`}
+                                className="text-sm tracking-widest hover:opacity-50 transition-opacity"
+                            >
+                                {item.toUpperCase()}
+                            </Link>
+                        )
+                    )}
                 </div>
                 <button
                     className="p-2 md:hidden z-50"
@@ -65,7 +67,7 @@ export default function Header() {
                     isOpen ? "translate-x-0" : "translate-x-full"
                 }`}
             >
-                {["work", "skills", "about", "contact"].map((item) => (
+                {["home", "work", "skills", "about", "contact"].map((item) => (
                     <Link
                         key={item}
                         href={`#${item}`}

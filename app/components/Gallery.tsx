@@ -28,7 +28,7 @@ const projects = [
 
 export default function Gallery() {
     const galleryRef = useRef(null);
-    const itemsRef = useRef([]);
+    const itemsRef =  useRef<(HTMLHeadingElement | null)[]>([]);;
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -59,7 +59,7 @@ export default function Gallery() {
             {projects.map((project, index) => (
                 <div
                     key={project.id}
-                    ref={(el) => (itemsRef.current[index] = el)}
+                    ref={(el:any) => (itemsRef.current[index] = el)}
                     className="group cursor-pointer"
                 >
                     <div className="relative aspect-[4/3] rounded-3xl overflow-hidden mb-4">

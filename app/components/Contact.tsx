@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 import { Mail, Github, Linkedin, Instagram } from "lucide-react";
 
 export default function Contact() {
-    const elementsRef = useRef([]);
+    const elementsRef = useRef<(HTMLHeadingElement | null)[]>([]);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -35,20 +35,20 @@ export default function Contact() {
         >
             <div className="max-w-4xl">
                 <h2
-                    ref={(el) => (elementsRef.current[0] = el)}
+                    ref={(el: any) => (elementsRef.current[0] = el)}
                     className="text-4xl md:text-6xl font-bold mb-16"
                 >
                     Let's Connect
                 </h2>
                 <div
-                    ref={(el) => (elementsRef.current[1] = el)}
+                    ref={(el: any) => (elementsRef.current[1] = el)}
                     className="text-xl md:text-2xl mb-12"
                 >
                     I&apos;m available for freelancing and I&apos;m always
                     interested in hearing about new projects and opportunities.
                 </div>
                 <div
-                    ref={(el) => (elementsRef.current[2] = el)}
+                    ref={(el: any) => (elementsRef.current[2] = el)}
                     className="flex flex-col md:flex-row gap-8"
                 >
                     <a

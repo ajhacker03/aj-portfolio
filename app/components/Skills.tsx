@@ -17,7 +17,7 @@ const skills = {
 };
 
 export default function Skills() {
-    const categoriesRef = useRef([]);
+    const categoriesRef =  useRef<(HTMLHeadingElement | null)[]>([]);;
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -52,7 +52,7 @@ export default function Skills() {
                 {Object.entries(skills).map(([category, skillList], index) => (
                     <div
                         key={category}
-                        ref={(el) => (categoriesRef.current[index] = el)}
+                        ref={(el:any) => (categoriesRef.current[index] = el)}
                         className="space-y-6"
                     >
                         <h3 className="text-2xl font-medium">{category}</h3>

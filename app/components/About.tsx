@@ -34,13 +34,13 @@ export default function About() {
         >
             <div className="max-w-4xl">
                 <h2
-                    ref={(el) => (textRefs.current[0] = el)}
+                    ref={(el:any) => (textRefs.current[0] = el)}
                     className="text-4xl md:text-6xl font-bold mb-16"
                 >
                     About Me
                 </h2>
                 <div
-                    ref={(el) => (textRefs.current[1] = el)}
+                    ref={(el:any) => (textRefs.current[1] = el)}
                     className="text-xl md:text-2xl leading-relaxed space-y-8"
                 >
                     <p>

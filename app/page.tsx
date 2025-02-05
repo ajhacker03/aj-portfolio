@@ -22,7 +22,7 @@ export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
     const mainRef = useRef(null);
     const heroRef = useRef(null);
-    const sectionsRef = useRef([]);
+    const sectionsRef = useRef<(HTMLHeadingElement | null)[]>([]);
 
     // Smooth scrolling for navbar links
     const handleNavClick = useCallback(
@@ -102,28 +102,28 @@ export default function Home() {
                         </section>
                         <section
                             id="work"
-                            ref={(el) => (sectionsRef.current[0] = el)}
+                            ref={(el: any) => (sectionsRef.current[0] = el)}
                             className="px-6 md:px-12 lg:px-24 mb-32 opacity-0"
                         >
                             <Gallery />
                         </section>
                         <section
                             id="skills"
-                            ref={(el) => (sectionsRef.current[1] = el)}
+                            ref={(el: any) => (sectionsRef.current[1] = el)}
                             className="opacity-0"
                         >
                             <Skills />
                         </section>
                         <section
                             id="about"
-                            ref={(el) => (sectionsRef.current[2] = el)}
+                            ref={(el: any) => (sectionsRef.current[2] = el)}
                             className="opacity-0"
                         >
                             <About />
                         </section>
                         <section
                             id="contact"
-                            ref={(el) => (sectionsRef.current[3] = el)}
+                            ref={(el: any) => (sectionsRef.current[3] = el)}
                             className="opacity-0"
                         >
                             <Contact />
