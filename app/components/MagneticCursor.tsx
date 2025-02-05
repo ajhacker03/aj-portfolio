@@ -1,10 +1,8 @@
-"use client";
-
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 export default function MagneticCursor() {
-    const cursorRef = useRef(null);
+    const cursorRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const cursor = cursorRef.current;
@@ -16,7 +14,7 @@ export default function MagneticCursor() {
         let magneticElements: NodeListOf<Element>;
 
         const initCursor = () => {
-            document.addEventListener("mousemove", (e) => {
+            document.addEventListener("mousemove", (e: MouseEvent) => {
                 clientX = e.clientX;
                 clientY = e.clientY;
             });
@@ -26,10 +24,12 @@ export default function MagneticCursor() {
                 lastX += (clientX - lastX) * 0.2;
                 lastY += (clientY - lastY) * 0.2;
 
-                gsap.set(cursor, {
-                    x: lastX,
-                    y: lastY,
-                });
+                if (cursor) {
+                    gsap.set(cursor, {
+                        x: lastX,
+                        y: lastY,
+                    });
+                }
 
                 requestAnimationFrame(render);
             };
@@ -85,7 +85,10 @@ export default function MagneticCursor() {
 
             magneticElements = document.querySelectorAll("a, button");
             magneticElements.forEach((element) => {
-                element.addEventListener("mouseenter", handleMouseEnter);
+                element.addEventListener(
+                    "mouseenter",
+                    handleMouseEnter as EventListener
+                );
             });
         };
 

@@ -4,13 +4,13 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 export default function Hero() {
-    const headingRef = useRef(null);
-    const highlightRef = useRef(null);
+    const headingRef = useRef<HTMLHeadingElement>(null);
+    const highlightRef = useRef<HTMLHeadingElement>(null);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
             // Ensure initial state is set
-            gsap.set(headingRef.current.children, {
+            gsap.set(headingRef.current!.children, {
                 opacity: 0,
                 y: 100,
             });
@@ -20,7 +20,7 @@ export default function Hero() {
             });
 
             // Animate heading lines
-            gsap.to(headingRef.current.children, {
+            gsap.to(headingRef.current!.children, {
                 opacity: 1,
                 y: 0,
                 duration: 1,
@@ -43,7 +43,7 @@ export default function Hero() {
     }, []);
 
     const handleMouseEnter = () => {
-        gsap.to(highlightRef.current.querySelector(".underline"), {
+        gsap.to(highlightRef.current!.querySelector(".underline"), {
             scaleX: 1,
             duration: 0.5,
             delay: 0.25,
@@ -53,7 +53,7 @@ export default function Hero() {
     };
 
     const handleMouseLeave = () => {
-        gsap.to(highlightRef.current.querySelector(".underline"), {
+        gsap.to(highlightRef.current!.querySelector(".underline"), {
             scaleX: 0,
             duration: 0.5,
             delay: 0.25,
