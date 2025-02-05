@@ -1,4 +1,5 @@
 "use client";
+
 import { useEffect, useRef, useCallback, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -8,9 +9,7 @@ import Loader from "./components/Loader";
 gsap.registerPlugin(ScrollTrigger);
 
 // Lazy-load components
-const MagneticCursor = dynamic(() => import("./components/MagneticCursor"), {
-    ssr: false,
-});
+const MagneticCursor = dynamic(() => import("./components/MagneticCursor"), { ssr: false });
 const Header = dynamic(() => import("./components/Header"), { ssr: false });
 const Hero = dynamic(() => import("./components/Hero"), { ssr: false });
 const Gallery = dynamic(() => import("./components/Gallery"), { ssr: false });
