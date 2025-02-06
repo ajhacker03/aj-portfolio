@@ -22,14 +22,21 @@ const projects = [
     },
     {
         id: 3,
-        title: "#3 - HighOn - (Work in Progress)",
+        title: "#3 - Defy Design.Co - (WIP)",
         image: img,
         category: "Developement",
         link: "#",
     },
     {
         id: 4,
-        title: "#4 - HackSpyder - (Work in Progress)",
+        title: "#4 - HighOn - (WIP)",
+        image: img,
+        category: "Developement",
+        link: "#",
+    },
+    {
+        id: 5,
+        title: "#5 - HackSpyder - (WIP)",
         image: img,
         category: "Branding and Developement",
         link: "#",
@@ -66,7 +73,7 @@ export default function Gallery() {
             <h2 className="text-4xl md:text-6xl font-bold mb-16">Projects</h2>
             <div
                 ref={galleryRef}
-                className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16"
+                className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-16"
             >
                 {projects.map((project, index) => (
                     <div
