@@ -9,7 +9,6 @@ import Loader from "./components/Loader";
 gsap.registerPlugin(ScrollTrigger);
 
 // Lazy-load components
-const MagneticCursor = dynamic(() => import("./components/MagneticCursor"), { ssr: false });
 const Header = dynamic(() => import("./components/Header"), { ssr: false });
 const Hero = dynamic(() => import("./components/Hero"), { ssr: false });
 const Gallery = dynamic(() => import("./components/Gallery"), { ssr: false });
@@ -93,7 +92,6 @@ export default function Home() {
                 <Loader onLoadingComplete={handleLoadingComplete} />
             ) : (
                 <div ref={mainRef} className="min-h-screen bg-white text-black">
-                    <MagneticCursor />
                     <Header />
                     <main className="relative">
                         <section id="home" ref={heroRef} className="opacity-0">
@@ -102,7 +100,7 @@ export default function Home() {
                         <section
                             id="work"
                             ref={(el: any) => (sectionsRef.current[0] = el)}
-                            className="px-6 md:px-12 lg:px-24 mb-32 opacity-0"
+                            className="min-h-screen py-32 px-6 md:px-12 lg:px-24"
                         >
                             <Gallery />
                         </section>

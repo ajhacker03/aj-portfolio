@@ -4,12 +4,6 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { Mail, Github, Linkedin, Instagram } from "lucide-react";
 
-export async function getStaticProps() {
-    return {
-        props: {},
-        revalidate: 1, // Re-generates the page every 1 second
-    };
-}
 export default function Contact() {
     const elementsRef = useRef<(HTMLHeadingElement | null)[]>([]);
 
